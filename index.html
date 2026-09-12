@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="hr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <title>MoberHR Weddings — organizacija i koordinacija vjenčanja</title>
+    <meta
+      name="description"
+      content="Organizacija i koordinacija vjenčanja u Zagrebu, Istri i na hrvatskoj obali. Planiranje od prve ideje do zadnjeg plesa, koordinacija na sam dan i profesionalni operativni tim."
+    />
+    <meta name="theme-color" content="#F7F0E2" />
+
+    <!-- TODO: zamijeni pravom domenom prije objave -->
+    <link rel="canonical" href="https://moberhr.hr/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="hr_HR" />
+    <meta property="og:site_name" content="MoberHR Weddings" />
+    <meta property="og:title" content="MoberHR Weddings — vaše je da volite, naše je da se pobrinemo za ostalo" />
+    <meta
+      property="og:description"
+      content="Organizacija i koordinacija vjenčanja u Zagrebu, Istri i na hrvatskoj obali."
+    />
+    <meta property="og:url" content="https://moberhr.hr/" />
+    <meta property="og:image" content="https://moberhr.hr/media/og-moberhr.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preload" as="image" href="/media/hero-obala.jpg" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      /* Sadržaj se skriva radi fade-ina SAMO ako preglednik to podržava.
+         Bez ovoga bi, u slučaju grješke u JS-u, sekcije ostale nevidljive. */
+      if ('IntersectionObserver' in window) {
+        document.documentElement.classList.add('js-reveal')
+      }
+    </script>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
