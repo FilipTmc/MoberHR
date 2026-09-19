@@ -1,6 +1,7 @@
 import { contact, contactSection as cs } from '../data/site.js'
 import Chapter from './Chapter.jsx'
 import { mreze } from './Social.jsx'
+import ContactForm from './ContactForm.jsx'
 
 export default function Contact() {
   /* Prikazuju se samo kanali koji stvarno imaju podatak. */
@@ -15,7 +16,7 @@ export default function Contact() {
   ].filter(Boolean)
 
   return (
-    <Chapter no="15" label="kontakt" className="chapter--zelena" id="kontakt">
+    <Chapter no="16" label="kontakt" className="chapter--zelena" id="kontakt">
       <div className="pin pin--desno">
         <div className="pin__media kontakt__media">
           <img src={cs.photo} alt={cs.photoAlt} loading="lazy" />
@@ -38,6 +39,7 @@ export default function Contact() {
             </ul>
           )}
 
+          <ContactForm />
         </div>
       </div>
     </Chapter>

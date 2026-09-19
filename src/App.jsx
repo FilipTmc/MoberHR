@@ -8,6 +8,7 @@ import Idea from './components/Idea.jsx'
 import Mosaic from './components/Mosaic.jsx'
 import Team from './components/Team.jsx'
 import Coordination from './components/Coordination.jsx'
+import Organization from './components/Organization.jsx'
 import Staff from './components/Staff.jsx'
 import Corners from './components/Corners.jsx'
 import More from './components/More.jsx'
@@ -36,6 +37,7 @@ export default function App() {
         <Mosaic />
         <Team />
         <Coordination />
+        <Organization />
         <Staff />
         <Corners />
         <More />

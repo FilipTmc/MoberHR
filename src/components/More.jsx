@@ -3,7 +3,7 @@ import Chapter from './Chapter.jsx'
 
 export default function More() {
   return (
-    <Chapter no="08" label="želite više" className="chapter--zelena">
+    <Chapter no="09" label="želite više" className="chapter--zelena">
       <h2 className="t-xl">{more.title}</h2>
       <p className="uvod">{more.lead}</p>
       <div className="tekst"><p>{more.sub}</p></div>

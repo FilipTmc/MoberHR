@@ -5,7 +5,7 @@ import Reveal from './Reveal.jsx'
 /* Fotografija je pozadina, zatamnjena; tekst stoji u prvom planu. */
 export default function Corners() {
   return (
-    <Chapter no="07" label="posebni detalji" className="chapter--duboki">
+    <Chapter no="08" label="posebni detalji" className="chapter--duboki">
       <h2 className="t-xl">{cornersTitle}</h2>
 
       <div className="corners">

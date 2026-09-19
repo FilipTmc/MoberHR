@@ -4,7 +4,7 @@ import Reveal from './Reveal.jsx'
 
 export default function Locations() {
   return (
-    <Chapter no="09" label="lokacije" id="lokacije">
+    <Chapter no="10" label="lokacije" id="lokacije">
       <h2 className="t-xl">{l.title}</h2>
       <p className="uvod">{l.lead}</p>
 

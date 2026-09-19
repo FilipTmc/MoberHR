@@ -3,7 +3,7 @@ import Chapter from './Chapter.jsx'
 
 export default function Between() {
   return (
-    <Chapter no="12" label="između trenutaka" className="chapter--duboki">
+    <Chapter no="13" label="između trenutaka" className="chapter--duboki">
       <h2 className="t-xl">{between.title}</h2>
       <p className="uvod">{between.lead}</p>
 

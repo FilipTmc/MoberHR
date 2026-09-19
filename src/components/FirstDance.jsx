@@ -5,7 +5,7 @@ export default function FirstDance() {
     <section className="ples">
       <video src={d.video} poster={d.poster} autoPlay muted loop playsInline aria-label={d.videoAlt} />
       <div className="shell ples__inner">
-        <span className="mark__no" style={{ color: 'rgba(251,248,241,.6)' }}>11 — prvi ples</span>
+        <span className="mark__no" style={{ color: 'rgba(251,248,241,.6)' }}>12 — prvi ples</span>
         <h2 className="t-xxl" style={{ marginTop: '1rem' }}>{d.title}</h2>
 
         <ul className="ples__linije">

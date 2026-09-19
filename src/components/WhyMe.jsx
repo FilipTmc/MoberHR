@@ -3,7 +3,7 @@ import Chapter from './Chapter.jsx'
 
 export default function WhyMe() {
   return (
-    <Chapter no="13" label="zašto Nataša">
+    <Chapter no="14" label="zašto Nataša">
       <h2 className="t-xl">{whyMe.title}</h2>
       <p className="uvod">{whyMe.lead}</p>
 

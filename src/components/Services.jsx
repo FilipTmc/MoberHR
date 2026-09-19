@@ -3,7 +3,7 @@ import Chapter from './Chapter.jsx'
 
 export default function Services() {
   return (
-    <Chapter no="10" label="dobavljači" className="chapter--papir">
+    <Chapter no="11" label="dobavljači" className="chapter--papir">
       <h2 className="t-xl">{s.title}</h2>
       <p className="uvod">{s.lead}</p>
       <div className="tekst"><p>{s.sub}</p></div>

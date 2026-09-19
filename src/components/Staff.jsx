@@ -3,7 +3,7 @@ import Chapter from './Chapter.jsx'
 
 export default function Staff() {
   return (
-    <Chapter no="06" label="operativni tim" className="chapter--papir">
+    <Chapter no="07" label="operativni tim" className="chapter--papir">
       <div className="pin">
         <div className="pin__media">
           <img src={staff.photo} alt={staff.photoAlt} loading="lazy" />

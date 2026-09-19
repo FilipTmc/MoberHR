@@ -24,10 +24,13 @@ Naslovna · Citat u krasopisu · zatim numerirana poglavlja 01–15, traka
 fotografija i završni citat:
 
 01 zašto postojimo · 02 Nataša · 03 od ideje do plesa · (traka fotografija) ·
-04 naš tim · 05 koordinacija · 06 operativni tim · 07 posebni detalji ·
-08 želite više · 09 lokacije · 10 dobavljači · 11 prvi ples ·
-12 između trenutaka · 13 zašto Nataša · 14 vaše je da volite · 15 kontakt ·
-završni citat u krasopisu
+04 naš tim · 05 koordinacija · 06 organizacija vjenčanja · 07 operativni tim ·
+08 posebni detalji · 09 želite više · 10 lokacije · 11 dobavljači ·
+12 prvi ples · 13 između trenutaka · 14 zašto Nataša · 15 vaše je da volite ·
+16 kontakt · završni citat u krasopisu
+
+⚠️ Tekst cjeline **06 organizacija vjenčanja** je prijedlog, nije klijentov.
+Neka ga Nataša pregleda i prepiše prije objave (`organizacija` u `site.js`).
 
 ## Boje i pisma
 
@@ -83,6 +86,33 @@ Preneseno je sve, uz četiri pravopisna ispravka (lako se vrate u `site.js`):
 - „CVJEĆE“ → „Cvijeće“
 - „posljednjih 24 godine“ → „posljednje 24 godine“
 - `Mi** ostvarujemo. **` → „Mi ostvarujemo.“ (zalutale zvjezdice)
+
+## Kontaktni obrazac
+
+Obrazac u sekciji „Kontakt" **zasad je samo primjer izgleda**. Dok je u
+`site.js` postavljeno `obrazac.povezan: false`, klik na gumb ne šalje ništa —
+prikaže se poruka i uputa na telefon i e-mail, pa nijedan upit ne može tiho
+nestati.
+
+Kada obrazac treba proraditi:
+
+1. u `src/data/site.js` postavi `obrazac.povezan: true`
+2. u `src/components/ContactForm.jsx`, u funkciji `posalji`, otkomentiraj
+   `fetch` i upiši stvarnu adresu
+3. obriši `obrazac.napomenaDemo` (postavi `''`) da nestane napomena ispod
+   obrasca
+
+Tri načina slanja, od najjednostavnijeg:
+
+- **Formspree ili Web3Forms** — besplatan plan, samo zamijeniš adresu u
+  `fetch`. Bez vlastitog poslužitelja.
+- **Cloudflare Pages Function** — datoteka `functions/api/upit.js` u projektu;
+  prima podatke i prosljeđuje ih na e-mail preko servisa poput Resenda.
+  Ostaje sve na Cloudflareu.
+- **mailto** — otvara korisnikov e-mail program. Radi bez ičega, ali mnogi
+  ga na mobitelu prekinu na pola, pa ga ne preporučam kao jedini put.
+
+Ako se obrazac ne koristi, `obrazac.aktivan: false` ga u cijelosti uklanja.
 
 ## Objava na Cloudflare Pages
 

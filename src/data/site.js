@@ -55,7 +55,7 @@ export const hero = {
 
 /* 02 — uvodni citat, krasopis */
 export const openingQuote = {
-  text: 'only something in me understands the voice of your eyes',
+  text: '\u201conly something in me understands the voice of your eyes\u201d',
   author: 'e. e. cummings',
 }
 
@@ -128,7 +128,7 @@ export const about = {
     ],
     finale: 'To je ono što želim stvoriti za vas.',
   },
-  krasopis: 'A truly unforgettable celebration is not just seen. It is felt.',
+  krasopis: '\u201cA truly unforgettable celebration is not just seen. It is felt.\u201d',
   photo: '/media/natasa.jpg',
   photoAlt: 'Nataša, voditeljica MoberHR Weddings',
 }
@@ -215,6 +215,43 @@ export const staff = {
   close: 'Da se vi ne morate pitati tko će poslužiti goste.',
   photo: '/media/servis-sala.jpg',
   photoAlt: 'Svečana sala s okruglim stolovima i cvjetnim aranžmanima spremna za goste',
+}
+
+/* 09b — organizacija vjenčanja (ide između koordinacije i operativnog tima)
+   ⚠️ TEKST JE PRIJEDLOG, NIJE KLIJENTOV — neka ga Nataša pregleda i prepiše
+   vlastitim riječima prije objave. Faze su izvedene iz onoga što već opisuje
+   u tekstu „O meni”, ali formulacije su moje. */
+export const organizacija = {
+  title: 'Organizacija vjenčanja',
+  lead: 'Od prvog razgovora do trenutka kada plan preuzima tim na dan vjenčanja.',
+  sub: 'Ne morate znati redoslijed. To je naš dio posla.',
+  faze: [
+    {
+      naslov: 'Prvi razgovor',
+      tekst: 'Upoznajemo vašu priču, stil i ono što vam je uistinu važno. Bez obrazaca i bez gotovih paketa.',
+    },
+    {
+      naslov: 'Koncept i stil',
+      tekst: 'Vaše želje pretvaramo u konkretan koncept — atmosferu, boje, ritam dana i detalje po kojima će se vjenčanje pamtiti.',
+    },
+    {
+      naslov: 'Lokacija',
+      tekst: 'Predlažemo prostore koji odgovaraju konceptu, broju gostiju i dobu godine, i dogovaramo obilaske.',
+    },
+    {
+      naslov: 'Dobavljači',
+      tekst: 'Povezujemo vas s fotografom, glazbom, cvijećem, cateringom i svime ostalim, te preuzimamo komunikaciju s njima.',
+    },
+    {
+      naslov: 'Raspored dana',
+      tekst: 'Slažemo satnicu koja drži vodu — od priprema i ceremonije do zadnjeg plesa, s vremenom za nepredviđeno.',
+    },
+    {
+      naslov: 'Predaja timu',
+      tekst: 'Sve dogovoreno pretvara se u plan koji na dan vjenčanja preuzima naš koordinacijski tim.',
+    },
+  ],
+  close: 'Vi donosite odluke. Mi pripremamo sve što je potrebno da ih uopće možete donijeti.',
 }
 
 /* 10 — corneri */
@@ -375,11 +412,38 @@ export const contactSection = {
   photoAlt: 'Mladenci ispred kamenog luka ukrašenog zelenilom',
 }
 
+/* 18b — obrazac za upit
+   ⚠️ OBRAZAC JOŠ NIJE POVEZAN sa slanjem. Trenutno je primjer izgleda:
+   na slanje prikaže poruku i uputi na telefon i e-mail.
+   Kako ga spojiti piše u README-u, odjeljak „Kontaktni obrazac”. */
+export const obrazac = {
+  aktivan: true,               // false = obrazac se uopće ne prikazuje
+  povezan: false,              // true tek kada slanje stvarno radi
+  naslov: 'Ili nam pišite ovdje',
+  lead: 'Javite nam datum, mjesto i par rečenica o tome kako zamišljate svoj dan.',
+  polja: {
+    ime: 'Ime i prezime',
+    email: 'E-mail',
+    telefon: 'Telefon (nije obavezno)',
+    datum: 'Datum vjenčanja (ako ga imate)',
+    lokacija: 'Mjesto ili lokacija',
+    poruka: 'Vaša poruka',
+  },
+  gumb: 'Pošaljite upit',
+  // Poruka koja se prikaže dok obrazac nije povezan:
+  nijePovezan: 'Obrazac je zasad samo primjer i ne šalje poruku. Do povezivanja nas kontaktirajte telefonom ili e-mailom.',
+  // Poruka nakon uspješnog slanja (kada obrazac proradi):
+  poslano: 'Hvala na upitu. Javljamo se u najkraćem roku.',
+  // Diskretna napomena ispod obrasca — obriši je (postavi '') prije objave
+  // ako ne želiš da posjetitelji vide da obrazac nije aktivan.
+  napomenaDemo: 'Prikaz obrasca — slanje još nije aktivno.',
+}
+
 /* 19 — završni citat, krasopis */
 export const closingQuote = {
   // NAPOMENA: ako ova misao ima poznatog autora, upiši ga u 'author'
   // i ispisat će se ispod citata.
-  text: 'the greatest gift we can give someone is not the promise that life will never be difficult, but the certainty that they will never have to face it alone',
+  text: '\u201cthe greatest gift we can give someone is not the promise that life will never be difficult, but the certainty that they will never have to face it alone\u201d',
   author: '',
   video: '/media/zavrsna-poruka.mp4',
   poster: '/media/poster-zavrsna-poruka.jpg',
