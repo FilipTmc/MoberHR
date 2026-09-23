@@ -47,16 +47,17 @@ CDN-a. Stranica ne šalje nijedan zahtjev prema vanjskom poslužitelju.
 
 U `src/data/site.js` traži `TODO`:
 
-- [ ] `contact.phone` i `contact.phoneHref`
-- [ ] `contact.email`
 - [x] ~~`contact.instagram`, `contact.facebook`, `contact.tiktok`~~ — upisano
 - [ ] `legal.company`, `legal.oib`, `legal.address`
 - [x] ~~`about.photo` — Natašina fotografija~~ — upisano
 - [x] ~~`brand.logo` — logotip~~ — upisano
 - [x] ~~`corners[].photo` — tri fotografije cornera~~ — upisano
+- [x] ~~`contact.phone`, `contact.email`~~ — upisano
 - [ ] `cornersTitle` — naslov te cjeline, ako želiš drugačiji
 - [x] ~~`locations.places[].photo` — pet fotografija lokacija~~ — upisano
 - [ ] `closingQuote.author` — ako završna misao ima poznatog autora
+- [ ] pravne stranice u `public/` — popuniti adresu i OIB (`<mark>` oznake)
+- [ ] arhivirati prethodnu verziju cjenika pri svakoj izmjeni cijena
 - [ ] `index.html` — zamijeni `https://moberhr.hr/` pravom domenom
 
 Preostalo je još samo telefon, e-mail, poslovni podaci i domena.
@@ -86,6 +87,39 @@ Preneseno je sve, uz četiri pravopisna ispravka (lako se vrate u `site.js`):
 - „CVJEĆE“ → „Cvijeće“
 - „posljednjih 24 godine“ → „posljednje 24 godine“
 - `Mi** ostvarujemo. **` → „Mi ostvarujemo.“ (zalutale zvjezdice)
+
+## Cjenik i pravne stranice
+
+Cijene se **ne prikazuju** na prodajnom dijelu stranice — to je odluka klijenta.
+Sekcija „Želite saznati više?" (prije kontakta) ima samo dva gumba.
+
+Sam cjenik je javno dostupan, bez obrasca i prijave, na dva mjesta:
+
+- `public/cjenik-usluga.html` — čitljiva tablica + opća napomena + preuzimanje
+- `public/cjenik-usluga.csv` — strojno čitljivo, točka-zarez, UTF-8 s BOM-om
+
+Cijene se mijenjaju u **obje** datoteke. Objavljene starije verzije cjenika
+treba arhivirati (npr. `cjenik-usluga-2026-10-01.csv`) jer se prethodne verzije
+moraju čuvati propisano vrijeme.
+
+Pravne stranice su statični HTML u `public/`, sa zajedničkim stilom `pravno.css`:
+
+| Datoteka | Stanje |
+|---|---|
+| `cjenik-usluga.html` | gotovo |
+| `pisani-prigovor-potrosaca.html` | gotovo — popuniti adresu i OIB |
+| `politika-privatnosti.html` | gotovo — popuniti adresu i OIB |
+| `opci-uvjeti-poslovanja.html` | gotovo — popuniti adresu i OIB |
+
+Preostaje popuniti samo adresu i OIB — označeni su žutim `<mark>` oznakama.
+Pretraži `public/*.html` za „upisati" i vidjet ćeš sva mjesta.
+
+Stranica o kolačićima namjerno ne postoji jer web ne koristi kolačiće ni analitiku.
+Dodaš li ikad Google Analytics, ugrađeni YouTube ili chat widget, to prestaje
+vrijediti i trebat će i stranica i traka za privolu.
+
+Tekstovi su pisani jednostavno i općenito. Nisu ih sastavili pravnici — ako
+klijentica želi sigurnost, neka ih netko iz struke pregleda.
 
 ## Kontaktni obrazac
 

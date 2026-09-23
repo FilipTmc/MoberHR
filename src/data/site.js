@@ -23,9 +23,9 @@ export const brand = {
 }
 
 export const contact = {
-  phone: '',      // TODO: npr. '+385 91 234 5678'
-  phoneHref: '',  // TODO: npr. 'tel:+385912345678'
-  email: '',      // TODO: npr. 'info@moberhr.hr'
+  phone: '095 567 0306',
+  phoneHref: 'tel:+385955670306',
+  email: 'info@mober.hr',
   instagram: 'https://www.instagram.com/mober.hr?stkn=eGJ4Z3V0ZW9iOTN0',
   facebook: 'https://m.facebook.com/AloKonobar/',
   tiktok: 'https://www.tiktok.com/@mober.hr?_r=1&_t=ZN-99cRLNoSJF8',
@@ -46,7 +46,7 @@ export const nav = [
 
 /* 01 — naslovna sekcija */
 export const hero = {
-  title: 'Vaše je da volite.\nNaše je da se pobrinemo za ostalo.',
+  title: 'Vaše je da volite.\nNama prepustite sve ostalo.',
   subtitle: 'Organizacija i koordinacija vjenčanja u Zagrebu, Istri i na hrvatskoj obali.',
   cta: 'Ispričajte nam svoju priču',
   image: '/media/hero-obala.jpg',
@@ -392,7 +392,7 @@ export const whyMe = {
 
 /* 17 — vaše je da volite (repriza) */
 export const yours = {
-  title: 'Vaše je da volite.\nNaše je da se pobrinemo za ostalo.',
+  title: 'Vaše je da volite.\nNama prepustite sve ostalo.',
   lead: 'Ne morate imati savršeno razrađen plan.',
   list: [
     'Ne morate znati gdje pronaći fotografa.',
@@ -425,10 +425,13 @@ export const obrazac = {
     ime: 'Ime i prezime',
     email: 'E-mail',
     telefon: 'Telefon (nije obavezno)',
-    datum: 'Datum vjenčanja (ako ga imate)',
+    vrsta: 'Vrsta događanja',
+    datum: 'Datum događanja (ako ga imate)',
     lokacija: 'Mjesto ili lokacija',
+    gosti: 'Broj gostiju (okvirno)',
     poruka: 'Vaša poruka',
   },
+  vrste: ['Vjenčanje', 'Privatna proslava', 'Poslovno događanje', 'Drugo'],
   gumb: 'Pošaljite upit',
   // Poruka koja se prikaže dok obrazac nije povezan:
   nijePovezan: 'Obrazac je zasad samo primjer i ne šalje poruku. Do povezivanja nas kontaktirajte telefonom ili e-mailom.',
@@ -437,6 +440,39 @@ export const obrazac = {
   // Diskretna napomena ispod obrasca — obriši je (postavi '') prije objave
   // ako ne želiš da posjetitelji vide da obrazac nije aktivan.
   napomenaDemo: 'Prikaz obrasca — slanje još nije aktivno.',
+}
+
+/* 18c — cjenik usluga: poziv na akciju
+   Cijene se namjerno NE prikazuju ovdje — odluka klijenta.
+   Same cijene su u javno dostupnoj CSV datoteci (vidi /public/cjenik-usluga.csv
+   i poveznicu u podnožju), što je i zakonski oblik objave. */
+export const cjenik = {
+  naslov: 'Želite saznati više?',
+  lead: 'Za pregled aktualnih cijena preuzmite naš cjenik ili nam se javite.',
+  tekst: 'Broj gostiju, lokacija, termin, trajanje i specifičnosti događanja utječu na konačan opseg usluge. Pošaljite nam osnovne informacije i pripremit ćemo ponudu prilagođenu vašem događanju.',
+  gumbCjenik: 'Preuzmite cjenik',
+  gumbKontakt: 'Kontaktirajte MoberHR Events',
+  // Kamo vodi gumb „Preuzmite cjenik".
+  // '#podnozje' = skrola do podnožja gdje je poveznica za preuzimanje.
+  // Za izravno preuzimanje upiši: '/cjenik-usluga.csv'
+  gumbCjenikHref: '#podnozje',
+}
+
+/* Podnožje — zakonske i poslovne poveznice.
+   Redoslijed je onaj koji je klijent zadao. Datoteke su u /public/. */
+export const pravno = {
+  cjenikDatoteka: '/cjenik-usluga.csv',
+  cjenikNapomena: '',
+  poveznice: [
+    { label: 'Pisani prigovor potrošača', href: '/pisani-prigovor-potrosaca.html' },
+    { label: 'Cjenik usluga', href: '/cjenik-usluga.html' },
+    { label: 'Opći uvjeti poslovanja', href: '/opci-uvjeti-poslovanja.html' },
+    { label: 'Politika privatnosti', href: '/politika-privatnosti.html' },
+    { label: 'Kontakt', href: '#kontakt' },
+  ],
+  // Napomena uz obrazac — obveza informiranja o obradi osobnih podataka
+  obrazacPrivatnost: 'Slanjem upita pristajete na obradu podataka u svrhu odgovora na upit.',
+  obrazacPrivatnostLink: '/politika-privatnosti.html',
 }
 
 /* 19 — završni citat, krasopis */

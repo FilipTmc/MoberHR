@@ -18,6 +18,7 @@ import FirstDance from './components/FirstDance.jsx'
 import Between from './components/Between.jsx'
 import WhyMe from './components/WhyMe.jsx'
 import Yours from './components/Yours.jsx'
+import Pricing from './components/Pricing.jsx'
 import Contact from './components/Contact.jsx'
 import ClosingQuote from './components/ClosingQuote.jsx'
 import Footer from './components/Footer.jsx'
@@ -47,8 +48,9 @@ export default function App() {
         <Between />
         <WhyMe />
         <Yours />
-        <Contact />
         <ClosingQuote />
+        <Pricing />
+        <Contact />
       </main>
       <Footer />
     </>

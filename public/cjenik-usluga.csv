@@ -1,0 +1,8 @@
+﻿redni_broj;naziv_usluge;maloprodajna_cijena;valuta;poseban_oblik_prodaje;naziv_posebnog_oblika_prodaje;sidrena_cijena;opseg_usluge;napomena;datum_primjene
+1;AFFOGATO CORNER BASIC;900,00;EUR;NE;;900,00;do 100 gostiju / do 4 sata angažmana;;2026-10-01
+2;AFFOGATO CORNER PREMIUM;1.100,00;EUR;NE;;1.100,00;do 100 gostiju / do 4 sata angažmana;;2026-10-01
+3;OPERATIVNI TIM ZA EVENTE;280,00;EUR;NE;;280,00;do 60 gostiju / do 4 sata angažmana;Svaki dodatni sat od 50,00 EUR;2026-10-01
+4;KOORDINACIJA DANA VJENČANJA;od 950,00;EUR;NE;;od 950,00;;Kriteriji formiranja konačne cijene: broj gostiju, lokacija, trajanje angažmana, složenost događanja i opseg koordinacije;2026-10-01
+5;DJELOMIČNA ORGANIZACIJA VJENČANJA;od 1.500,00;EUR;NE;;od 1.500,00;;Kriteriji formiranja konačne cijene: opseg angažmana, broj gostiju, lokacija, trajanje i potrebe mladenaca;2026-10-01
+6;KOMPLETNA ORGANIZACIJA VJENČANJA;od 2.500,00;EUR;NE;;od 2.500,00;;Kriteriji formiranja konačne cijene: opseg organizacije, broj gostiju, lokacija, trajanje angažmana i složenost događanja;2026-10-01
+7;CONSULTING;90,00;EUR;NE;;90,00;individualne konzultacije u trajanju od 60 minuta;Cijena se odnosi na 60 minuta;2026-10-01

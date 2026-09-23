@@ -1,0 +1,165 @@
+/* Stil za pravne stranice (cjenik, uvjeti, privatnost, prigovor, kolačići).
+   Odvojen od glavne stranice jer su ovo statične HTML datoteke u /public/. */
+
+@font-face {
+  font-family: 'Syne';
+  src: url('/fonts/syne-600.woff2') format('woff2');
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Manrope';
+  src: url('/fonts/manrope-400.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Manrope';
+  src: url('/fonts/manrope-500.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+}
+
+:root {
+  --pjenusac: #f4efe4;
+  --papir: #fbf8f1;
+  --zelena: #16291e;
+  --zelena-blaga: #5d7566;
+  --tinta-blaga: #4a5349;
+  --linija: rgba(22, 41, 30, 0.16);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--pjenusac);
+  color: var(--zelena);
+  font-family: 'Manrope', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.75;
+  -webkit-text-size-adjust: 100%;
+}
+
+.omot {
+  max-width: 820px;
+  margin-inline: auto;
+  padding: clamp(2.5rem, 7vw, 5rem) clamp(1.25rem, 5vw, 3rem) 5rem;
+}
+
+a { color: var(--zelena); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--zelena); outline-offset: 3px; }
+
+.natrag {
+  display: inline-block;
+  font-size: 0.86rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 0.25rem;
+  margin-bottom: clamp(2rem, 5vw, 3.5rem);
+}
+
+h1 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  font-size: clamp(1.9rem, 5vw, 3rem);
+  margin: 0 0 0.8rem;
+}
+h2 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+  line-height: 1.2;
+  margin: 2.8rem 0 0.7rem;
+}
+h3 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 600;
+  font-size: 1.02rem;
+  letter-spacing: -0.02em;
+  margin: 1.8rem 0 0.4rem;
+}
+
+p, li { color: var(--tinta-blaga); max-width: 68ch; }
+li { margin-bottom: 0.3rem; }
+
+.uvod {
+  font-family: 'Syne', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  line-height: 1.35;
+  color: var(--zelena);
+  max-width: 34ch;
+  margin: 0 0 2rem;
+}
+
+.datum {
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--zelena-blaga);
+  margin: 0 0 2.5rem;
+}
+
+/* --- žuta zastavica: predložak koji treba dopuniti --- */
+.predlozak {
+  background: #fdf3d8;
+  border-left: 3px solid #b08d4f;
+  padding: 1.1rem 1.3rem;
+  margin: 0 0 2.5rem;
+  font-size: 0.9rem;
+  color: #6a5522;
+  max-width: none;
+}
+.predlozak strong { display: block; margin-bottom: 0.3rem; }
+mark {
+  background: #fdf3d8;
+  color: #6a5522;
+  padding: 0.1em 0.35em;
+  border-radius: 2px;
+  font-weight: 500;
+}
+
+/* --- tablica cjenika --- */
+.tablica-omot { overflow-x: auto; margin: 2rem 0; }
+table { border-collapse: collapse; width: 100%; min-width: 620px; font-size: 0.92rem; }
+th, td { text-align: left; padding: 0.85rem 1rem 0.85rem 0; border-bottom: 1px solid var(--linija); vertical-align: top; }
+th {
+  font-family: 'Syne', sans-serif;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--zelena-blaga);
+  border-bottom-color: var(--zelena);
+}
+td.usluga { font-family: 'Syne', sans-serif; font-weight: 600; color: var(--zelena); letter-spacing: -0.02em; }
+td.cijena { white-space: nowrap; font-weight: 500; color: var(--zelena); }
+
+.preuzmi {
+  display: inline-block;
+  background: var(--zelena);
+  color: var(--pjenusac);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 0.9rem 1.7rem;
+  margin-top: 0.5rem;
+}
+.preuzmi:hover { background: #2c4636; }
+.preuzmi-note { font-size: 0.82rem; color: var(--zelena-blaga); margin-top: 0.8rem; }
+
+.podnozje {
+  margin-top: 4rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--linija);
+  font-size: 0.84rem;
+  color: var(--zelena-blaga);
+}
+.podnozje p { color: inherit; }

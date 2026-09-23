@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { contact, obrazac } from '../data/site.js'
+import { contact, obrazac, pravno } from '../data/site.js'
 
 /* ───────────────────────────────────────────────────────────────
    OBRAZAC ZA UPIT — ZASAD SAMO PRIMJER IZGLEDA.
@@ -14,7 +14,10 @@ import { contact, obrazac } from '../data/site.js'
       Pages Function, Formspree, Web3Forms — vidi README)
    ─────────────────────────────────────────────────────────────── */
 
-const PRAZNO = { ime: '', email: '', telefon: '', datum: '', lokacija: '', poruka: '' }
+const PRAZNO = {
+  ime: '', email: '', telefon: '', vrsta: '',
+  datum: '', lokacija: '', gosti: '', poruka: '',
+}
 
 export default function ContactForm() {
   const [polja, setPolja] = useState(PRAZNO)
@@ -55,7 +58,7 @@ export default function ContactForm() {
       <h3 className="obrazac__naslov">{obrazac.naslov}</h3>
       <p className="obrazac__lead">{obrazac.lead}</p>
 
-      <form onSubmit={posalji} noValidate={false}>
+      <form onSubmit={posalji}>
         <div className="obrazac__red">
           <label className="polje">
             <span>{p.ime}</span>
@@ -73,8 +76,24 @@ export default function ContactForm() {
             <input type="tel" name="telefon" value={polja.telefon} onChange={promjena} autoComplete="tel" />
           </label>
           <label className="polje">
+            <span>{p.vrsta}</span>
+            <select name="vrsta" value={polja.vrsta} onChange={promjena}>
+              <option value="">—</option>
+              {(obrazac.vrste || []).map((v) => (
+                <option key={v} value={v}>{v}</option>
+              ))}
+            </select>
+          </label>
+        </div>
+
+        <div className="obrazac__red">
+          <label className="polje">
             <span>{p.datum}</span>
             <input type="date" name="datum" value={polja.datum} onChange={promjena} />
+          </label>
+          <label className="polje">
+            <span>{p.gosti}</span>
+            <input type="number" name="gosti" min="1" value={polja.gosti} onChange={promjena} />
           </label>
         </div>
 
@@ -107,6 +126,14 @@ export default function ContactForm() {
           {stanje === 'poslano' && obrazac.poslano}
           {stanje === 'greska' && 'Slanje nije uspjelo. Pokušajte ponovno ili nam se javite telefonom.'}
         </p>
+
+        {/* Obveza informiranja o obradi osobnih podataka */}
+        {pravno?.obrazacPrivatnost && (
+          <p className="obrazac__privatnost">
+            {pravno.obrazacPrivatnost}{' '}
+            <a href={pravno.obrazacPrivatnostLink}>Politika privatnosti</a>
+          </p>
+        )}
       </form>
 
       {!obrazac.povezan && obrazac.napomenaDemo && (
