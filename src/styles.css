@@ -600,3 +600,40 @@ p { margin: 0 0 1.05em; max-width: 62ch; }
   .cjenik__gumbi .btn { width: 100%; text-align: center; }
   .footer__inner { flex-direction: column; gap: 2.2rem; }
 }
+
+/* ---------- engleska podstranica ---------- */
+
+/* engleski uvodni odlomak je dulji od hrvatskog pa treba više prostora */
+.hero--en .hero__sub { max-width: 52ch; }
+
+.hero__tagline {
+  font-family: var(--display); font-weight: 500; letter-spacing: -0.02em;
+  font-size: clamp(1.05rem, 2.1vw, 1.5rem); line-height: 1.3;
+  color: var(--papir); margin: 1.2rem 0 0; max-width: 30ch;
+  text-shadow: 0 1px 16px rgba(12, 22, 16, 0.55);
+}
+
+.mjesta { list-style: none; padding: 0; margin: 2.2rem 0 0; }
+.mjesta li {
+  font-family: var(--display); font-weight: 500; letter-spacing: -0.02em;
+  font-size: clamp(1.15rem, 2.2vw, 1.6rem); line-height: 1.45; color: var(--zelena);
+  padding: 0.45rem 0 0.45rem 1.6rem; position: relative;
+}
+.mjesta li::before {
+  content: ''; position: absolute; left: 0; top: 1.15rem;
+  width: 9px; height: 1px; background: var(--zelena-blaga);
+}
+
+.kontakt__jezici {
+  margin: 1.2rem 0 0; font-size: 0.86rem;
+  color: rgba(244, 239, 228, 0.62); max-width: 40ch;
+}
+
+/* prebacivanje jezika u navigaciji */
+.jezik {
+  font-weight: 500; letter-spacing: 0.08em;
+  padding: 0.3rem 0.55rem;
+  box-shadow: inset 0 0 0 1px currentColor;
+}
+.jezik::after { display: none; }
+.jezik:hover { opacity: 0.7; }

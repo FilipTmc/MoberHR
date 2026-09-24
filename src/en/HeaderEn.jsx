@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react'
-import { nav } from '../data/site.js'
-import Logo from './Logo.jsx'
-import Social from './Social.jsx'
+import { navEn, jezik } from '../data/site-en.js'
+import LogoEn from './LogoEn.jsx'
 
-export default function Header() {
+export default function HeaderEn() {
   const [stuck, setStuck] = useState(false)
   const [open, setOpen] = useState(false)
 
@@ -28,24 +27,24 @@ export default function Header() {
     <>
       <header className={`header ${stuck ? 'is-stuck' : ''} ${!stuck && !open ? 'header--preko' : ''}`}>
         <div className="shell header__inner">
-          <Logo znak tamnaPodloga={!stuck && !open} />
+          <LogoEn znak tamnaPodloga={!stuck && !open} />
 
-          <nav className="nav" aria-label="Glavna navigacija">
-            {nav.map((i) => (
-              <a className="nav__link" key={i.href} href={i.href}>
-                {i.label}
-              </a>
+          <nav className="nav" aria-label="Main navigation">
+            {navEn.map((i) => (
+              <a className="nav__link" key={i.href} href={i.href}>{i.label}</a>
             ))}
-            <a className="nav__link jezik" href="/en/" title="English version">EN</a>
-            <a className="btn" href="#kontakt">Pošaljite upit</a>
+            <a className="nav__link jezik" href={jezik.naHrvatski.href} title={jezik.naHrvatski.title}>
+              {jezik.naHrvatski.label}
+            </a>
+            <a className="btn" href="#contact">Send enquiry</a>
           </nav>
 
           <button
             className={`burger ${open ? 'is-open' : ''}`}
             onClick={() => setOpen((v) => !v)}
             aria-expanded={open}
-            aria-controls="mobilni-izbornik"
-            aria-label={open ? 'Zatvori izbornik' : 'Otvori izbornik'}
+            aria-controls="mobile-menu"
+            aria-label={open ? 'Close menu' : 'Open menu'}
           >
             <span /><span /><span />
           </button>
@@ -53,13 +52,12 @@ export default function Header() {
       </header>
 
       {open && (
-        <div className="drawer" id="mobilni-izbornik">
-          {nav.map((i) => (
+        <div className="drawer" id="mobile-menu">
+          {navEn.map((i) => (
             <a key={i.href} href={i.href} onClick={() => setOpen(false)}>{i.label}</a>
           ))}
-          <a href="/en/">English</a>
-          <a className="btn" href="#kontakt" onClick={() => setOpen(false)}>Pošaljite upit</a>
-          <Social className="mreze--izbornik" />
+          <a href={jezik.naHrvatski.href}>Hrvatski</a>
+          <a className="btn" href="#contact" onClick={() => setOpen(false)}>Send enquiry</a>
         </div>
       )}
     </>

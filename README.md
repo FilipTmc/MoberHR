@@ -56,7 +56,8 @@ U `src/data/site.js` traži `TODO`:
 - [ ] `cornersTitle` — naslov te cjeline, ako želiš drugačiji
 - [x] ~~`locations.places[].photo` — pet fotografija lokacija~~ — upisano
 - [ ] `closingQuote.author` — ako završna misao ima poznatog autora
-- [ ] pravne stranice u `public/` — popuniti adresu i OIB (`<mark>` oznake)
+- [ ] **cjenik: upisati cijene koje nedostaju** — Gelato Corner Basic i Premium,
+      Organizacija događanja, Operativni tim (konobar i voditelj)
 - [ ] arhivirati prethodnu verziju cjenika pri svakoj izmjeni cijena
 - [ ] `index.html` — zamijeni `https://moberhr.hr/` pravom domenom
 
@@ -88,31 +89,43 @@ Preneseno je sve, uz četiri pravopisna ispravka (lako se vrate u `site.js`):
 - „posljednjih 24 godine“ → „posljednje 24 godine“
 - `Mi** ostvarujemo. **` → „Mi ostvarujemo.“ (zalutale zvjezdice)
 
+## Engleska podstranica
+
+Objavljena je na `/en/` kao zaseban Vite ulaz (vidi `vite.config.js`).
+Tekstovi su u `src/data/site-en.js`, komponente u `src/en/`, a dizajn i CSS
+dijeli s hrvatskom stranicom. Prebacivanje jezika je gumb EN/HR u navigaciji.
+
+Fotografije su u `public/media/en/`. Pravne stranice su zajedničke i na
+hrvatskom — to je u podnožju engleske verzije i napisano.
+
 ## Cjenik i pravne stranice
 
 Cijene se **ne prikazuju** na prodajnom dijelu stranice — to je odluka klijenta.
 Sekcija „Želite saznati više?" (prije kontakta) ima samo dva gumba.
 
-Sam cjenik je javno dostupan, bez obrasca i prijave, na dva mjesta:
+Stranica `cjenik-usluga.html` prikazuje kontakt i veliki gumb za preuzimanje —
+cijene se vide tek u preuzetoj datoteci `cjenik-usluga.csv`.
 
-- `public/cjenik-usluga.html` — čitljiva tablica + opća napomena + preuzimanje
-- `public/cjenik-usluga.csv` — strojno čitljivo, točka-zarez, UTF-8 s BOM-om
+CSV prati službeni format: interna šifra, naziv, jedinica mjere, aktualna cijena,
+sidrena cijena na 10.09.2026., poseban oblik prodaje, najniža cijena u 30 dana i
+napomena. Sidrena cijena namjerno je prazna jer su usluge uvedene nakon tog datuma.
 
-Cijene se mijenjaju u **obje** datoteke. Objavljene starije verzije cjenika
-treba arhivirati (npr. `cjenik-usluga-2026-10-01.csv`) jer se prethodne verzije
-moraju čuvati propisano vrijeme.
+Objavljene starije verzije cjenika treba arhivirati (npr.
+`cjenik-usluga-2026-10-01.csv`) jer se prethodne verzije moraju čuvati
+propisano vrijeme.
 
 Pravne stranice su statični HTML u `public/`, sa zajedničkim stilom `pravno.css`:
 
 | Datoteka | Stanje |
 |---|---|
 | `cjenik-usluga.html` | gotovo |
-| `pisani-prigovor-potrosaca.html` | gotovo — popuniti adresu i OIB |
-| `politika-privatnosti.html` | gotovo — popuniti adresu i OIB |
-| `opci-uvjeti-poslovanja.html` | gotovo — popuniti adresu i OIB |
+| `pisani-prigovor-potrosaca.html` | gotovo |
+| `politika-privatnosti.html` | gotovo |
+| `opci-uvjeti-poslovanja.html` | gotovo |
 
-Preostaje popuniti samo adresu i OIB — označeni su žutim `<mark>` oznakama.
-Pretraži `public/*.html` za „upisati" i vidjet ćeš sva mjesta.
+Adresa i OIB su upisani. Ako se službeni naziv u registru razlikuje od
+„MoberHR Events", promijeni `legal.company` u `site.js` i naziv u pravnim
+stranicama.
 
 Stranica o kolačićima namjerno ne postoji jer web ne koristi kolačiće ni analitiku.
 Dodaš li ikad Google Analytics, ugrađeni YouTube ili chat widget, to prestaje

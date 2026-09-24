@@ -32,9 +32,11 @@ export const contact = {
 }
 
 export const legal = {
-  company: '',  // TODO: puni naziv obrta/tvrtke
-  oib: '',      // TODO
-  address: '',  // TODO
+  // Ako je službeni naziv u registru drugačiji (npr. s oznakom obrta
+  // ili d.o.o.), upiši ga ovdje — prikazuje se u podnožju.
+  company: 'MoberHR Events',
+  oib: '48720789788',
+  address: 'Ladislava Šabana 16, 10360 Zagreb',
 }
 
 export const nav = [

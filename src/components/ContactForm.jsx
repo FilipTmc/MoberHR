@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { contact, obrazac, pravno } from '../data/site.js'
+import { contact as contactHr, obrazac as obrazacHr, pravno as pravnoHr } from '../data/site.js'
 
 /* ───────────────────────────────────────────────────────────────
    OBRAZAC ZA UPIT — ZASAD SAMO PRIMJER IZGLEDA.
@@ -19,7 +19,12 @@ const PRAZNO = {
   datum: '', lokacija: '', gosti: '', poruka: '',
 }
 
-export default function ContactForm() {
+/* `data` i `privatnost` omogućuju da isti obrazac posluži i engleskoj
+   podstranici — bez njih koristi hrvatske tekstove iz site.js. */
+export default function ContactForm({ data, privatnost, kontakt }) {
+  const obrazac = data || obrazacHr
+  const pravno = privatnost || pravnoHr
+  const contact = kontakt || contactHr
   const [polja, setPolja] = useState(PRAZNO)
   const [stanje, setStanje] = useState(null) // null | 'slanje' | 'poslano' | 'demo' | 'greska'
 
@@ -131,7 +136,9 @@ export default function ContactForm() {
         {pravno?.obrazacPrivatnost && (
           <p className="obrazac__privatnost">
             {pravno.obrazacPrivatnost}{' '}
-            <a href={pravno.obrazacPrivatnostLink}>Politika privatnosti</a>
+            <a href={pravno.obrazacPrivatnostLink}>
+              {pravno.linkLabel || 'Politika privatnosti'}
+            </a>
           </p>
         )}
       </form>
